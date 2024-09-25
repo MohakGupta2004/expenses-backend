@@ -32,7 +32,7 @@ This is a Node.js-based API for tracking personal expenses, built using **Expres
 ### Clone the repository
 
 ```bash
-git clone https://github.com/MohakGupta2004/expense-tracker-api.git
+git clone https://github.com/MohakGupta2004/expenses-backend
 cd expense-tracker-api
 ```
 
