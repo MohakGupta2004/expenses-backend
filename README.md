@@ -1,4 +1,4 @@
-v# Expense Tracker API
+# Expense Tracker API
 
 This is a Node.js-based API for tracking personal expenses, built using **Express**, **PostgreSQL** (with **Prisma** ORM), and **JWT** for authentication. The API allows users to create accounts, log in, manage their expenses, and filter expenses by different time periods.
 
