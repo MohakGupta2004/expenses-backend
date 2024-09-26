@@ -4,7 +4,8 @@ import morgan from 'morgan'
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
-
+import zod from 'zod'
+import { PrismaClient } from '@prisma/client';
 export{
     express,
   cors,
@@ -12,4 +13,6 @@ export{
   dotenv,
   jwt,
   bcrypt,
+  zod,
+  PrismaClient
 }
