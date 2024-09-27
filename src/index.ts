@@ -9,6 +9,6 @@ app.use(express.json()); // For parsing JSON requests
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1', expenseRouter)
 
-app.listen(5000, ()=>{
+app.listen(3000, ()=>{
     console.log("listening")
 })
