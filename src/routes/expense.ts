@@ -1,6 +1,6 @@
 import { Router } from "express";
 import authMiddleware from "../middleware/auth";
-import { PrismaClient } from "../imports";
+import { PrismaClient, categories } from "../imports";
 const router = Router();
 const prisma = new PrismaClient();
 router.get("/expense", authMiddleware, async (req, res) => {
@@ -62,6 +62,12 @@ router.get("/expense", authMiddleware, async (req, res) => {
 router.post("/expense", authMiddleware, async (req, res) => {
   // Add a new expense entry.
   const { title, amount, category, date, description } = req.body;
+  if(!categories.includes(category)){
+    res.status(400).json({
+        message: "Invalid Category"
+    })
+    return;
+  }
   const userId = req.userId;
   if (!userId) {
     return;
@@ -91,6 +97,12 @@ router.post("/expense", authMiddleware, async (req, res) => {
 router.put("/expenses/:id", authMiddleware, async (req, res) => {
   const id = Number(req.params.id);
   const { title, amount, category, date, description } = req.body;
+  if(!categories.includes(category)){
+    res.status(400).json({
+        message: "Invalid Category"
+    })
+    return;
+  }
   try {
     const result = await prisma.expenses.updateMany({
       where: {

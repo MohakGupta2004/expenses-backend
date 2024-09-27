@@ -6,6 +6,7 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import zod from 'zod'
 import { PrismaClient } from '@prisma/client';
+import categories from './utils/category';
 export{
     express,
   cors,
@@ -14,5 +15,6 @@ export{
   jwt,
   bcrypt,
   zod,
-  PrismaClient
+  PrismaClient,
+  categories
 }
